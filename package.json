@@ -1,0 +1,10 @@
+{
+  "name": "hackersir-2018-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "NightFeather <ss900328@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "reveal.js": "^3.7.0"
+  }
+}
