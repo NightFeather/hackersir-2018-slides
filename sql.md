@@ -20,8 +20,6 @@
 
 這種感覺
 
-<br>
-
 |學號|姓名|
 |:--:|:--:|
 |D0000000|王小明|
@@ -29,7 +27,7 @@
 
 ---
 
-# 資料庫基本架構
+## 資料庫基本架構
 
 --
 
@@ -64,9 +62,9 @@
 於是就有了這樣的 SQL
 
 - 建立 FCU 這個資料庫
-  - ``CREATE DATABASE `FCU`; ``
+  - ``CREATE DATABASE `FCU`;``
 - 刪掉 FCU 這個資料庫
-  - ``DROP DATABASE `FCU`; ``
+  - ``DROP DATABASE `FCU`;``
 
 --
 
@@ -76,7 +74,7 @@
 
 --
 
-這邊可以先下 ` use FCU; `
+這邊可以先下 `use FCU;`
 
 聲明我要用 `FCU`
 
@@ -88,17 +86,17 @@
   - ``CREATE TABLE `Students` (stuid VARCHAR(10), name VARCHAR(255));``
 
 - 刪掉 Students 這個表
-  - ``DROP TABLE `Students`; ``
+  - ``DROP TABLE `Students`;``
 
 --
 
 也可以這樣用
 
 - 在 `FCU` 建立 `Students` 這個表
-  - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255)); ``
+  - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
 
 - 刪掉 `FCU` 裡的 `Students` 這個表
-  - ``DROP TABLE `FCU`.`Students`; ``
+  - ``DROP TABLE `FCU`.`Students`;``
 
 --
 
