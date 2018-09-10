@@ -1,3 +1,7 @@
+---
+highlightTheme: zenburn
+---
+
 # SQL
 
 ---
