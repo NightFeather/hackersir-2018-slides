@@ -218,6 +218,12 @@ highlightTheme: zenburn
 
 --
 
+`SELECT [DISTINCT] *|[欄位]... FROM 表;`
+
+加上 DISTINCT 可以去掉重複的結果
+
+--
+
 `SELECT * FROM Students;`
 
 倒出 `Students` 這張表裡的所有東西。
@@ -259,7 +265,6 @@ INSERT INTO Students (stuid) VALUES ("D0000002");
 INSERT INTO Students (stuid) VALUES ("D0000003");
 INSERT INTO Students (stuid) VALUES ("D0000004");
 ```
-
 
 --
 
@@ -350,6 +355,21 @@ SELECT * from Students;
 --  | D0000003 | 無名氏     |
 --  | D0000004 | 無名氏     |
 --  +----------+-----------+
+```
+
+--
+
+看看有哪些人名
+
+```sql
+SELECT DISTINCT name from Students;
+--  +-----------+
+--  | name      |
+--  +-----------+
+--  | 喵喵喵     |
+--  | 哈哈哈     |
+--  | 無名氏     |
+--  +-----------+
 ```
 
 ---
@@ -478,3 +498,22 @@ SELECT * FROM Students;
 記得先用同個 WHERE 子句 select 一次確認噢
 
 ---
+
+### 內建函式
+
+---
+
+- `USER()`
+  - 取得目前使用者名稱
+- `DATABASE()`
+  - 取得目前開啟的資料庫名稱
+- `SLEEP(n)`
+  - 等待 n 秒後繼續執行
+- `COUNT(n)`
+  - 結果有幾個
+- `SUBSTRING(str,start,len)`
+  - 取 str 內從第 start 個字元開始的 len 個字元
+  - `SUBSTRING("0123456789", 2, 3) #=> 123`
+- `ASCII(str)`
+  - 給出 str 第一個字的 ascii code
+  - `ASCII("ABC") #=> 65`
