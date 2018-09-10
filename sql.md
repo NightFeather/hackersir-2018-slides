@@ -49,11 +49,11 @@ highlightTheme: zenburn
 
 ---
 
-# 正題
+## 正題
 
 ---
 
-## 基本語法 (一)
+### 基本語法 (一)
 
 --
 
@@ -133,15 +133,15 @@ highlightTheme: zenburn
 
 ---
 
-## 型態
+### 型態
 
 ---
 
-### 數字
+#### 數字
 
 --
 
-#### 整數
+##### 整數
 
 - BIT (1bit)
 - TINYINT / BOOL (8bit)
@@ -151,7 +151,7 @@ highlightTheme: zenburn
 
 --
 
-#### 帶小數點
+##### 帶小數點
 
 - 固定小數點位數
   - DECIMAL/FIXED
@@ -161,11 +161,11 @@ highlightTheme: zenburn
 
 ---
 
-### 字串
+#### 字串
 
 --
 
-#### 建立時指定長度(上限)
+##### 建立時指定長度(上限)
 
 - 填滿長度
   - CHAR
@@ -178,7 +178,7 @@ highlightTheme: zenburn
 
 --
 
-#### 不必指定長度上限的
+##### 不必指定長度上限的
 
 - 以位元組為單位
   - TINYBLOB ( 255byte)
@@ -193,7 +193,7 @@ highlightTheme: zenburn
 
 --
 
-#### 附註
+##### 附註
 
 - CHAR <-> TEXT
   - 差在資料庫內的儲存方式
@@ -201,7 +201,7 @@ highlightTheme: zenburn
 
 ---
 
-#### 特殊類型
+##### 特殊類型
 
 - ENUM
   - 存的資料是 N 選 1
@@ -210,11 +210,11 @@ highlightTheme: zenburn
 
 ---
 
-## 基本語法 (二)
+### 基本語法 (二)
 
 ---
 
-### 查詢
+#### 查詢
 
 --
 
@@ -234,7 +234,7 @@ highlightTheme: zenburn
 
 ---
 
-### 新增
+#### 新增
 
 --
 
@@ -269,14 +269,14 @@ highlightTheme: zenburn
 
 ---
 
-### 更新
+#### 更新
 
 ---
 
-### 替換
+#### 條件式
 
 ---
 
-### 刪除
+#### 刪除
 
 ---
