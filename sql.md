@@ -252,6 +252,17 @@ highlightTheme: zenburn
 
 --
 
+多加幾個
+
+```sql
+INSERT INTO Students (stuid) VALUES ("D0000002");
+INSERT INTO Students (stuid) VALUES ("D0000003");
+INSERT INTO Students (stuid) VALUES ("D0000004");
+```
+
+
+--
+
 看看現在表裡有啥
 
 --
@@ -263,6 +274,9 @@ SELECT * from Students;
 --  +----------+-----------+
 --  | D0000000 | 喵喵喵     |
 --  | D0000001 | NULL      |
+--  | D0000002 | NULL      |
+--  | D0000003 | NULL      |
+--  | D0000004 | NULL      |
 --  +----------+-----------+
 ```
 
@@ -272,11 +286,9 @@ SELECT * from Students;
 
 --
 
-剛剛加了一個無名氏進來
+剛剛加了幾個無名氏進來
 
-幫他加名字上去吧
-
---
+幫 `D0000001` 加名字上去吧
 
 叫他哈哈哈好了
 
@@ -294,7 +306,9 @@ SELECT * from Students;
 
 只幫 stuid 是 D0000001 的那行更新名字
 
-`UPDATE Students SET name="哈哈哈" WHERE stuid="D0000001";`
+```sql
+UPDATE Students SET name="哈哈哈" WHERE stuid="D0000001";
+```
 
 --
 
@@ -307,6 +321,34 @@ SELECT * from Students;
 --  +----------+-----------+
 --  | D0000000 | 喵喵喵     |
 --  | D0000001 | 哈哈哈     |
+--  | D0000002 | NULL      |
+--  | D0000003 | NULL      |
+--  | D0000004 | NULL      |
+--  +----------+-----------+
+```
+
+--
+
+順便把沒有名字的人都變成無名氏
+
+```sql
+UPDATE Students SET name="無名氏" WHERE name IS NULL;
+```
+
+--
+
+無名氏們
+
+```sql
+SELECT * from Students;
+--  +----------+-----------+
+--  | stuid    | name      |
+--  +----------+-----------+
+--  | D0000000 | 喵喵喵     |
+--  | D0000001 | 哈哈哈     |
+--  | D0000002 | 無名氏     |
+--  | D0000003 | 無名氏     |
+--  | D0000004 | 無名氏     |
 --  +----------+-----------+
 ```
 
@@ -324,9 +366,13 @@ SELECT * from Students;
 
 WHERE A `<cmp>` B [ `<logic>` A `<cmp>` B ]...
 
+WHERE A IS [NOT] NULL
+
 --
 
-`cmp: =, >, <, <>, LIKE`
+`cmp: =, >, <, <>, LIKE, IN, BETWEEN`
+
+`login: and, or`
 
 --
 
@@ -379,5 +425,56 @@ SELECT * FROM Students WHERE stuid='D0000000' and name='哈哈哈';
 ---
 
 #### 刪除
+
+--
+
+接下來講講怎麽刪
+
+--
+
+刪掉學號是 `D0000003` 這位同學好惹
+
+```sql
+DELETE FROM Students WHERE stuid='D0000003';
+```
+
+--
+
+某無名氏掰
+
+```sql
+SELECT * FROM Students;
+--  +----------+-----------+
+--  | stuid    | name      |
+--  +----------+-----------+
+--  | D0000000 | 喵喵喵     |
+--  | D0000001 | 哈哈哈     |
+--  | D0000002 | 無名氏     |
+--  | D0000004 | 無名氏     |
+--  +----------+-----------+
+```
+
+--
+
+手滑
+
+```sql
+DELETE FROM Students;
+```
+
+--
+
+全掰
+
+```sql
+SELECT * FROM Students;
+-- Empty Set
+```
+
+--
+
+下次要刪之前
+
+記得先用同個 WHERE 子句 select 一次確認噢
 
 ---
