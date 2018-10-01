@@ -1,6 +1,3 @@
----
-highlightTheme: zenburn
----
 
 # SQL
 
