@@ -44,3 +44,19 @@ SELECT * from Users
 
 這行拿去跑會噴錯誤
 
+> ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'meow')' at line 1
+
+--
+
+那如果說我們故意把他湊成有意義的呢
+
+--
+
+帳號: `admin'or 1=1--` 密碼: meow
+
+```sql
+SELECT * from Users
+  where username = 'admin'or 1=1--' and password = md5('meow');
+```
+
+--
