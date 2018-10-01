@@ -533,6 +533,9 @@ select 1 AS A#單行註解;
   - 等待 n 秒後繼續執行
 - `COUNT(n)`
   - 結果有幾個
+
+--
+
 - `SUBSTRING(str,start,len)`
   - 取 str 內從第 start 個字元開始的 len 個字元
   - `SUBSTRING("0123456789", 2, 3) #=> 123`
