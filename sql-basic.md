@@ -248,13 +248,18 @@ highlightTheme: zenburn
 
 學號 **D0000000** 名字是 **喵喵喵** 的人的資料
 
-`INSERT INTO Students (stuid,name) VALUES ( "D0000000", "喵喵喵" );`
+```sql
+INSERT INTO Students (stuid,name)
+      VALUES ( "D0000000", "喵喵喵" );
+```
 
 --
 
 也可以只有學號
 
-`INSERT INTO Students (stuid) VALUES ("D0000001");`
+```sql
+INSERT INTO Students (stuid) VALUES ("D0000001");
+```
 
 --
 
