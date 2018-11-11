@@ -68,8 +68,7 @@
 
 --
 
-於是就有了這樣的 SQL
-
+如何刪除
 - 刪掉 FCU 這個資料庫
   - ``DROP DATABASE `FCU`;``
   - ![](https://i.imgur.com/n6yM1Az.png)
