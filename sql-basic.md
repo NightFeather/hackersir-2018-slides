@@ -394,7 +394,7 @@ WHERE A IS [NOT] NULL
 
 `cmp: =, >, <, <>, LIKE, IN, BETWEEN`
 
-`login: and, or`
+`logic: and, or`
 
 --
 
