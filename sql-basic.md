@@ -95,10 +95,14 @@
 
 - 建立 Students 這個表
   - ``CREATE TABLE `Students` (stuid VARCHAR(10), name VARCHAR(255));``
-  - 
+  - ![](https://i.imgur.com/Ku8uHNo.png)
 
+--
+
+如何刪除
 - 刪掉 Students 這個表
   - ``DROP TABLE `Students`;``
+  - ![](https://i.imgur.com/dxxUTnR.png)
 
 --
 
@@ -106,7 +110,11 @@
 
 - 在 `FCU` 建立 `Students` 這個表
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
+  - ![](https://i.imgur.com/hBqU7x0.png)
 
+--
+
+如何刪除
 - 刪掉 `FCU` 裡的 `Students` 這個表
   - ``DROP TABLE `FCU`.`Students`;``
 
