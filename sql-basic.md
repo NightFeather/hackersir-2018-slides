@@ -250,13 +250,26 @@
 
 所以你應該只會得到
 
-`Empty Set`
+![](https://i.imgur.com/lghEee3.png)
 
 > 啥都沒有喔
 
 ---
 
 #### 新增
+
+不過為了能輸入中文所以我們要先做一點設定
+--
+
+![](https://i.imgur.com/tyC1AH2.png)
+
+--
+
+![](https://i.imgur.com/xAw9L7u.png)
+
+--
+
+![](https://i.imgur.com/yr7LTtT.png)
 
 --
 
