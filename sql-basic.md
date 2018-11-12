@@ -260,7 +260,7 @@
 
 --
 
-![](https://i.imgur.com/nmEL6F0.png)
+![](https://i.imgur.com/bEAPQql.png)
 
 --
 
@@ -522,5 +522,3 @@ select 1 AS A#單行註解;
 - `ASCII(str)`
   - 給出 str 第一個字的 ascii code
   - `ASCII("ABC") #=> 65`
-
----
