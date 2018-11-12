@@ -9,7 +9,11 @@
 
 一種用來跟關聯式資料庫(的管理程式)溝通的語言
 
----
+--
+
+![](https://i.imgur.com/OfUX6bI.gif)
+
+--
 
 ## 關聯式資料庫？
 
@@ -91,6 +95,7 @@
 
 - 建立 Students 這個表
   - ``CREATE TABLE `Students` (stuid VARCHAR(10), name VARCHAR(255));``
+  - 
 
 - 刪掉 Students 這個表
   - ``DROP TABLE `Students`;``
