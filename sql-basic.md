@@ -68,14 +68,12 @@
 
 - 建立 FCU 這個資料庫
   - ``CREATE DATABASE `FCU`;``
-  - ![](https://i.imgur.com/6q5wClj.png)
 
 --
 
 如何刪除
 - 刪掉 FCU 這個資料庫
   - ``DROP DATABASE `FCU`;``
-  - ![](https://i.imgur.com/n6yM1Az.png)
 
 --
 
@@ -95,14 +93,12 @@
 
 - 建立 Students 這個表
   - ``CREATE TABLE `Students` (stuid VARCHAR(10), name VARCHAR(255));``
-  - ![](https://i.imgur.com/Ku8uHNo.png)
 
 --
 
 如何刪除
 - 刪掉 Students 這個表
   - ``DROP TABLE `Students`;``
-  - ![](https://i.imgur.com/dxxUTnR.png)
 
 --
 
@@ -110,7 +106,6 @@
 
 - 在 `FCU` 建立 `Students` 這個表
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
-    - ![](https://i.imgur.com/hBqU7x0.png)
 
 --
 
@@ -308,16 +303,8 @@ INSERT INTO Students (stuid) VALUES ("D0000004");
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | NULL      |
---  | D0000002 | NULL      |
---  | D0000003 | NULL      |
---  | D0000004 | NULL      |
---  +----------+-----------+
 ```
+- - ![](https://i.imgur.com/LwK6lP2.png)
 
 ---
 
@@ -355,16 +342,8 @@ UPDATE Students SET name="哈哈哈" WHERE stuid="D0000001";
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | NULL      |
---  | D0000003 | NULL      |
---  | D0000004 | NULL      |
---  +----------+-----------+
 ```
+- ![](https://i.imgur.com/48evkeS.png)
 
 --
 
@@ -380,16 +359,8 @@ UPDATE Students SET name="無名氏" WHERE name IS NULL;
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | 無名氏     |
---  | D0000003 | 無名氏     |
---  | D0000004 | 無名氏     |
---  +----------+-----------+
 ```
+- ![](https://i.imgur.com/2afh9Hi.png)
 
 --
 
@@ -397,14 +368,8 @@ SELECT * from Students;
 
 ```sql
 SELECT DISTINCT name from Students;
---  +-----------+
---  | name      |
---  +-----------+
---  | 喵喵喵     |
---  | 哈哈哈     |
---  | 無名氏     |
---  +-----------+
 ```
+- ![](https://i.imgur.com/OMOsoNB.png)
 
 ---
 
@@ -450,24 +415,15 @@ WHERE A IS [NOT] NULL
 
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000';
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  +----------+-----------+
 ```
+- ![](https://i.imgur.com/QSPN8Bq.png)
 
 --
 
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  +----------+-----------+
 ```
+- ![](https://i.imgur.com/rZWGTOM.png)
 
 --
 
@@ -475,6 +431,7 @@ SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
 SELECT * FROM Students WHERE stuid='D0000000' and name='哈哈哈';
 -- 啥都沒有
 ```
+- ![](https://i.imgur.com/7f15vhg.png)
 
 ---
 
@@ -498,15 +455,8 @@ DELETE FROM Students WHERE stuid='D0000003';
 
 ```sql
 SELECT * FROM Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | 無名氏     |
---  | D0000004 | 無名氏     |
---  +----------+-----------+
 ```
+- ![](https://i.imgur.com/u8u3GR9.png)
 
 --
 
@@ -522,8 +472,8 @@ DELETE FROM Students;
 
 ```sql
 SELECT * FROM Students;
--- Empty Set
 ```
+- ![](https://i.imgur.com/lghEee3.png)
 
 --
 
