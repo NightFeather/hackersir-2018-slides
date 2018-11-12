@@ -110,7 +110,7 @@
 
 - 在 `FCU` 建立 `Students` 這個表
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
-  - ![](https://i.imgur.com/hBqU7x0.png)
+    - ![](https://i.imgur.com/hBqU7x0.png)
 
 --
 
@@ -265,7 +265,7 @@
 
 --
 
-![](https://i.imgur.com/xAw9L7u.png)
+![](https://i.imgur.com/9ncZ5gw.png)
 
 --
 
