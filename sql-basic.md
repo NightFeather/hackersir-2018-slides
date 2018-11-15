@@ -174,7 +174,7 @@
   - FLOAT
   - DOUBLE
 
----
+--
 
 #### 字串
 
@@ -394,12 +394,6 @@ WHERE A IS [NOT] NULL
 
 --
 
-`cmp: =, >, <, <>, LIKE, IN, BETWEEN`
-
-`logic: and, or`
-
---
-
 `<>` 是不等於，雖然大部分軟體有實作 `!=`
 
 但是 `<>` 是標準定義的，還是建議用這個
@@ -526,3 +520,6 @@ select 1 AS A#單行註解;
 - `ASCII(str)`
   - 給出 str 第一個字的 ascii code
   - `ASCII("ABC") #=> 65`
+--
+
+講完瞜~
