@@ -1,15 +1,23 @@
 
-# SQL
+# [環境架設](https://hackmd.io/p/BypP-bAcQ)
+
+--
+
+# SQL基礎語法
 
 ---
 
-## 啥是 SQL
+## SQL是什麼呢?
 
 --
 
 一種用來跟關聯式資料庫(的管理程式)溝通的語言
 
----
+--
+
+![](https://i.imgur.com/OfUX6bI.gif)
+
+--
 
 ## 關聯式資料庫？
 
@@ -64,6 +72,10 @@
 
 - 建立 FCU 這個資料庫
   - ``CREATE DATABASE `FCU`;``
+
+--
+
+如何刪除
 - 刪掉 FCU 這個資料庫
   - ``DROP DATABASE `FCU`;``
 
@@ -86,6 +98,9 @@
 - 建立 Students 這個表
   - ``CREATE TABLE `Students` (stuid VARCHAR(10), name VARCHAR(255));``
 
+--
+
+如何刪除
 - 刪掉 Students 這個表
   - ``DROP TABLE `Students`;``
 
@@ -96,6 +111,9 @@
 - 在 `FCU` 建立 `Students` 這個表
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
 
+--
+
+如何刪除
 - 刪掉 `FCU` 裡的 `Students` 這個表
   - ``DROP TABLE `FCU`.`Students`;``
 
@@ -132,7 +150,7 @@
 
 ### 型態
 
----
+--
 
 #### 數字
 
@@ -156,7 +174,7 @@
   - FLOAT
   - DOUBLE
 
----
+--
 
 #### 字串
 
@@ -196,7 +214,7 @@
   - 差在資料庫內的儲存方式
   - 短的字串存成 VARCHAR 效率會比 TEXT 好一些
 
----
+--
 
 ##### 特殊類型
 
@@ -209,7 +227,7 @@
 
 ### 基本語法 (二)
 
----
+--
 
 #### 查詢
 
@@ -231,13 +249,26 @@
 
 所以你應該只會得到
 
-`Empty Set`
+![](https://i.imgur.com/lghEee3.png)
 
 > 啥都沒有喔
 
----
+--
 
 #### 新增
+
+不過為了能輸入中文所以我們要先做一點設定
+--
+
+![](https://i.imgur.com/tyC1AH2.png)
+
+--
+
+![](https://i.imgur.com/bEAPQql.png)
+
+--
+
+![](https://i.imgur.com/yr7LTtT.png)
 
 --
 
@@ -276,18 +307,10 @@ INSERT INTO Students (stuid) VALUES ("D0000004");
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | NULL      |
---  | D0000002 | NULL      |
---  | D0000003 | NULL      |
---  | D0000004 | NULL      |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/aobNpLW.png)
 
----
+--
 
 #### 更新
 
@@ -323,16 +346,9 @@ UPDATE Students SET name="哈哈哈" WHERE stuid="D0000001";
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | NULL      |
---  | D0000003 | NULL      |
---  | D0000004 | NULL      |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/tZ6t157.png)
+
 
 --
 
@@ -348,16 +364,8 @@ UPDATE Students SET name="無名氏" WHERE name IS NULL;
 
 ```sql
 SELECT * from Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | 無名氏     |
---  | D0000003 | 無名氏     |
---  | D0000004 | 無名氏     |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/bIdlOg5.png)
 
 --
 
@@ -365,14 +373,8 @@ SELECT * from Students;
 
 ```sql
 SELECT DISTINCT name from Students;
---  +-----------+
---  | name      |
---  +-----------+
---  | 喵喵喵     |
---  | 哈哈哈     |
---  | 無名氏     |
---  +-----------+
 ```
+![](https://i.imgur.com/XrGUjar.png)
 
 ---
 
@@ -389,12 +391,6 @@ SELECT DISTINCT name from Students;
 WHERE A `<cmp>` B [ `<logic>` A `<cmp>` B ]...
 
 WHERE A IS [NOT] NULL
-
---
-
-`cmp: =, >, <, <>, LIKE, IN, BETWEEN`
-
-`login: and, or`
 
 --
 
@@ -418,24 +414,15 @@ WHERE A IS [NOT] NULL
 
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000';
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/vhhUMjG.png)
 
 --
 
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/web5Q2E.png)
 
 --
 
@@ -443,8 +430,9 @@ SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
 SELECT * FROM Students WHERE stuid='D0000000' and name='哈哈哈';
 -- 啥都沒有
 ```
+![](https://i.imgur.com/1e1AFa6.png)
 
----
+--
 
 #### 刪除
 
@@ -466,15 +454,8 @@ DELETE FROM Students WHERE stuid='D0000003';
 
 ```sql
 SELECT * FROM Students;
---  +----------+-----------+
---  | stuid    | name      |
---  +----------+-----------+
---  | D0000000 | 喵喵喵     |
---  | D0000001 | 哈哈哈     |
---  | D0000002 | 無名氏     |
---  | D0000004 | 無名氏     |
---  +----------+-----------+
 ```
+![](https://i.imgur.com/CsKaoSE.png)
 
 --
 
@@ -490,8 +471,8 @@ DELETE FROM Students;
 
 ```sql
 SELECT * FROM Students;
--- Empty Set
 ```
+![](https://i.imgur.com/lghEee3.png)
 
 --
 
@@ -539,5 +520,6 @@ select 1 AS A#單行註解;
 - `ASCII(str)`
   - 給出 str 第一個字的 ascii code
   - `ASCII("ABC") #=> 65`
+--
 
----
+講完瞜~
