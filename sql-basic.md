@@ -141,11 +141,6 @@
 
 各自型態是長度上限為 10 和 255 的字串
 
---
-
-而這邊講的字串是 MySQL/MariaDB 的一種型態
-> 意味著不見得每家都支援
-
 ---
 
 ### 型態
@@ -205,23 +200,6 @@
   - TEXT (2^8-1 chars)
   - MEDIUMTEXT ( 2^16-1 chars )
   - LONGTEXT (2^32-1 chars)
-
---
-
-##### 附註
-
-- CHAR <-> TEXT
-  - 差在資料庫內的儲存方式
-  - 短的字串存成 VARCHAR 效率會比 TEXT 好一些
-
---
-
-##### 特殊類型
-
-- ENUM
-  - 存的資料是 N 選 1
-- SET
-  - 存的資料是 N 選 M (不重複)
 
 ---
 
@@ -385,12 +363,6 @@ SELECT DISTINCT name from Students;
 拿來限制 SQL 指令用的子句
 
 `SELECT`, `UPDATE`, `REPLACE` 還有等等的 `DELETE` 適用
-
---
-
-WHERE A `<cmp>` B [ `<logic>` A `<cmp>` B ]...
-
-WHERE A IS [NOT] NULL
 
 --
 
