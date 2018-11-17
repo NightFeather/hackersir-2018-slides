@@ -471,27 +471,4 @@ select 1 AS A#單行註解;
 
 ---
 
-### 內建函式
-
---
-
-- `USER()`
-  - 取得目前使用者名稱
-- `DATABASE()`
-  - 取得目前開啟的資料庫名稱
-- `SLEEP(n)`
-  - 等待 n 秒後繼續執行
-- `COUNT(n)`
-  - 結果有幾個
-
---
-
-- `SUBSTRING(str,start,len)`
-  - 取 str 內從第 start 個字元開始的 len 個字元
-  - `SUBSTRING("0123456789", 2, 3) #=> 123`
-- `ASCII(str)`
-  - 給出 str 第一個字的 ascii code
-  - `ASCII("ABC") #=> 65`
---
-
 講完瞜~
