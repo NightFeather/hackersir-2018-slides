@@ -120,7 +120,7 @@
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
   
   
-  - 要注意引號包的位置,全包一起會被當成一個 table 名稱
+- 要注意引號包的位置,全包一起會被當成一個 table 名稱.
 
 --
 
@@ -129,7 +129,7 @@
   - ``DROP TABLE `FCU`.`Students`;``
   
   
-  - 要注意引號包的位置,全包一起會被當成一個 table 名稱
+- 要注意引號包的位置,全包一起會被當成一個 table 名稱.
 
 ---
 
