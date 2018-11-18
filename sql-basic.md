@@ -118,6 +118,8 @@
 
 - 在 `FCU` 建立 `Students` 這個表
   - ``CREATE TABLE `FCU`.`Students` (stuid VARCHAR(10), name VARCHAR(255));``
+  
+  
   - 要注意引號包的位置,全包一起會被當成一個 table 名稱
 
 --
@@ -125,6 +127,8 @@
 如何刪除
 - 刪掉 `FCU` 裡的 `Students` 這個表
   - ``DROP TABLE `FCU`.`Students`;``
+  
+  
   - 要注意引號包的位置,全包一起會被當成一個 table 名稱
 
 ---
