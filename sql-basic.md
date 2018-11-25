@@ -7,7 +7,7 @@
 
 ---
 
-## SQL是什麼呢?
+## SQL是什麼呢？
 
 --
 
@@ -76,6 +76,7 @@
 --
 
 如何刪除
+
 - 刪掉 FCU 這個資料庫
   - ``DROP DATABASE `FCU`;``
 
@@ -101,6 +102,7 @@
 --
 
 如何刪除
+
 - 刪掉 Students 這個表
   - ``DROP TABLE `Students`;``
 
@@ -114,6 +116,7 @@
 --
 
 如何刪除
+
 - 刪掉 `FCU` 裡的 `Students` 這個表
   - ``DROP TABLE `FCU`.`Students`;``
 
@@ -258,6 +261,7 @@
 #### 新增
 
 不過為了能輸入中文所以我們要先做一點設定
+
 --
 
 ![](https://i.imgur.com/tyC1AH2.png)
@@ -308,6 +312,7 @@ INSERT INTO Students (stuid) VALUES ("D0000004");
 ```sql
 SELECT * from Students;
 ```
+
 ![](https://i.imgur.com/aobNpLW.png)
 
 --
@@ -347,8 +352,8 @@ UPDATE Students SET name="哈哈哈" WHERE stuid="D0000001";
 ```sql
 SELECT * from Students;
 ```
-![](https://i.imgur.com/tZ6t157.png)
 
+![](https://i.imgur.com/tZ6t157.png)
 
 --
 
@@ -365,6 +370,7 @@ UPDATE Students SET name="無名氏" WHERE name IS NULL;
 ```sql
 SELECT * from Students;
 ```
+
 ![](https://i.imgur.com/bIdlOg5.png)
 
 --
@@ -374,6 +380,7 @@ SELECT * from Students;
 ```sql
 SELECT DISTINCT name from Students;
 ```
+
 ![](https://i.imgur.com/XrGUjar.png)
 
 ---
@@ -415,6 +422,7 @@ WHERE A IS [NOT] NULL
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000';
 ```
+
 ![](https://i.imgur.com/vhhUMjG.png)
 
 --
@@ -422,6 +430,7 @@ SELECT * FROM Students WHERE stuid='D0000000';
 ```sql
 SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
 ```
+
 ![](https://i.imgur.com/web5Q2E.png)
 
 --
@@ -430,6 +439,7 @@ SELECT * FROM Students WHERE stuid='D0000000' or name='哈哈哈';
 SELECT * FROM Students WHERE stuid='D0000000' and name='哈哈哈';
 -- 啥都沒有
 ```
+
 ![](https://i.imgur.com/1e1AFa6.png)
 
 --
@@ -455,6 +465,7 @@ DELETE FROM Students WHERE stuid='D0000003';
 ```sql
 SELECT * FROM Students;
 ```
+
 ![](https://i.imgur.com/CsKaoSE.png)
 
 --
@@ -472,6 +483,7 @@ DELETE FROM Students;
 ```sql
 SELECT * FROM Students;
 ```
+
 ![](https://i.imgur.com/lghEee3.png)
 
 --
@@ -520,6 +532,7 @@ select 1 AS A#單行註解;
 - `ASCII(str)`
   - 給出 str 第一個字的 ascii code
   - `ASCII("ABC") #=> 65`
+
 --
 
 講完瞜~
