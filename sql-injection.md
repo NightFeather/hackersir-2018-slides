@@ -37,6 +37,14 @@
 
 ---
 
+準備一下 db
+
+--
+
+[下載之後把內容餵給 phpMyAdmin](../sql-injection.sql)
+
+---
+
 好比說你要登入
 
 你輸入了 帳號: admin 密碼: meow
@@ -175,6 +183,8 @@ OOPS
 select 1,2,3 union select 4,5;
 ```
 
+![碰](https://i.imgur.com/cPRt4rl.png)
+
 --
 
 這個會動
@@ -183,13 +193,31 @@ select 1,2,3 union select 4,5;
 select 1,2,3 union select 7,8,9;
 ```
 
+![其實沒啥意義](https://i.imgur.com/tku7CeK.png)
+
 --
 
-> 這邊隨便建兩個 table demo 一下好了
+還可以這樣
+
+```sql
+select 1,2,3 union select 4,5,6 union select 7,8,9;
+```
+
+![串](https://i.imgur.com/ERu70zh.png)
+
+--
+
+```sql
+select * from `Users` union select 'a','a',data from `blah`;
+```
+
+![一起來](https://i.imgur.com/2dZNfAq.png)
 
 --
 
 變成如果看到清單類型的就可以這樣注注看
+
+然後你可以直接像前面那樣在 select 裡塞值來猜那個 table 有幾格
 
 --
 
@@ -265,13 +293,18 @@ select 1,2,3 union select 7,8,9;
 
 ---
 
-你也可以故意讓前一個回傳空
+你也可以故意讓前一個找不到任何東西
 
 後面接你要找的東西
 
 --
 
-> 應該也是用前面的 table demo 一下
+```sql
+select * from `Users` where user = 'admin' and password = md5('meow')
+ union select 'a','a', column_name from information_schema.columns where TABLE_NAME = 'blah' limit 3
+```
+
+![](https://i.imgur.com/Kl7DyJ0.png)
 
 --
 
@@ -405,9 +438,7 @@ SELECT * from Users
 
 也有些神奇的方塊可以做到好玩的事
 
---
-
-像是各家資料庫程式的各種 ~~bug~~ feature
+<!--.element class="fragment"--> 像是各家資料庫程式的各種 ~~bug~~ feature
 
 --
 
