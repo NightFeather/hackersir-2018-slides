@@ -220,7 +220,7 @@
 #### 新增
 
 - 不過為了能輸入中文所以我們要先做一點設定
-- [Mac用戶看這裡](https://hackmd.io/QWw_jY88TzCqfK1TEmt_fQ?edit)
+- [Mac用戶看這裡](https://hackmd.io/p/rJimTF067#/)
 --
 
 ![](https://i.imgur.com/tyC1AH2.png)
